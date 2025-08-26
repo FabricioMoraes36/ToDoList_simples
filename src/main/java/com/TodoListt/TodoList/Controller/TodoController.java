@@ -2,6 +2,7 @@ package com.TodoListt.TodoList.Controller;
 
 import com.TodoListt.TodoList.Entity.Todo;
 import com.TodoListt.TodoList.Service.TodoService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class TodoController {
 
     //POST
     @PostMapping("/create")
-    List<Todo> create(@RequestBody Todo todo){
+    List<Todo> create(@RequestBody @Valid Todo todo){
         return todoService.create(todo);
     }
     //GET
